@@ -1,4 +1,4 @@
-package Pizzeria;
+package Pizzeria_old;
 
 public class Kellner extends Mensch{
     private String pizza;

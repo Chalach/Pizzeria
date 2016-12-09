@@ -1,6 +1,6 @@
-package Pizzeria;
+package Pizzeria_new;
 
-public class Mensch {
+public abstract class Mensch {
     private String name;
 
     public Mensch(String name) {

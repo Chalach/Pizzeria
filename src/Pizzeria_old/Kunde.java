@@ -1,4 +1,4 @@
-package Pizzeria;
+package Pizzeria_old;
 
 public class Kunde extends Mensch {
     private double geld;
