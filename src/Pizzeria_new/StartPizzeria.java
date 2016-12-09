@@ -44,7 +44,7 @@ public class StartPizzeria {
         System.out.println("Willkommen in deiner neuen Pizzeria!");
         System.out.print("Name: ");
         pizzeriaName = sc.nextLine();
-        System.out.println("Du bist nun der Inhaber der Pizzeria " + pizzeriaName);
+        System.out.println("Du bist nun der Inhaber der Pizzeria \"" + pizzeriaName + "\"");
 
         // Inhaber
         System.out.print("Nenne mir deinen Namen: ");
@@ -61,7 +61,11 @@ public class StartPizzeria {
         System.out.println("Danke, bevor du aber deine Pizzeria eröffnen kannst müsst du Mitarbeiter einstellen!");
     }
 
-    public static void mitarbeiterEinstellen() throws IOException {
+    private static void createKundenstamm()throws IOException{
+        kundenstamm = new Kundenstamm();
+    }
+
+    private static void mitarbeiterEinstellen() throws IOException {
         /*
             TODO:
              - Namen der Angestellten muss noch random erstellt werden -> OK
@@ -110,7 +114,7 @@ public class StartPizzeria {
         return true;
     }
 
-    public ArrayList<String> getNamenListe() throws IOException{
+    private ArrayList<String> getNamenListe() throws IOException{
         if(!isAlreadyReadIn){
             try (BufferedReader br = new BufferedReader(new FileReader("namen\\namen.txt"))) {
                 for (String c; (c = br.readLine()) != null; ) {
@@ -122,6 +126,11 @@ public class StartPizzeria {
             isAlreadyReadIn = true;
         }
         return namenListe;
+    }
+
+    private static void startSimulation(){
+        System.out.println("Perfekt, du kannst nun deine Pizzeria eröffnen!");
+        System.out.println("Simulation startet nun");
     }
 
     public static void main(String[] args) throws Exception {
@@ -140,8 +149,9 @@ public class StartPizzeria {
                     - Inhaber kann Mitarbeiter feuern
                     - Inhaber kann die Gerätschaften (Ofen) upgraden lassen
         */
-
         createPizzeria();
+        createKundenstamm();
         mitarbeiterEinstellen();
+        startSimulation();
     }
 }
