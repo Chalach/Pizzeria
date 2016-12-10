@@ -3,7 +3,7 @@ package Pizzeria_new;
 /*
     TODO:
     - GUI
-    - User kann sein eigenes Restaurant erstellen
+    - User kann sein eigenes Restaurant erstellen -> OK
     - Der Inhaber kann Mitarbeiter einstellen und feuern
     - Pizza - Karte muss noch erstellt werden
     - evlt. wird die Übung "PizzabringDienst" noch implementiert
@@ -130,6 +130,10 @@ public class StartPizzeria {
 
     private static void startSimulation(){
         System.out.println("Perfekt, du kannst nun deine Pizzeria eröffnen!");
+        System.out.println("Sind Sie mit der Pizzakarte zufrieden?");
+        // Pizzakarte + Serialisierung
+        // Danach folgt die Simulation
+        // Simulation kann mit Strings verwaltet werden
         System.out.println("Simulation startet nun");
     }
 

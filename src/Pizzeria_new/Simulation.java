@@ -1,16 +1,32 @@
 package Pizzeria_new;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Simulation extends Thread {
-    private int threadCount = 0;
+    private static int threadCount = 0;
+    private static ArrayList<Kunde> kundeArrayList = new ArrayList<>();
 
     private void printErgebnis(){
-        System.out.println(threadCount);
+        if(threadCount == 5){
+            for(Kunde i : kundeArrayList){
+                System.out.println(i);
+            }
+        }
     }
 
     public void run() {
-        System.out.println("Berechne...");
-        for (int i = 0; i < 25; i++) {
+        Random random = new Random();
+        Kunde kunde = new Kunde("");
+        int duration = random.nextInt(10000);
+        System.out.println(duration);
+        try {
+            Thread.sleep(duration);
+            kundeArrayList.add(kunde);
             threadCount++;
+            System.out.println("Thread: " + threadCount);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         printErgebnis();
     }
