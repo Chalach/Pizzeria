@@ -23,8 +23,8 @@ public class Simulation extends Thread {
         try {
             Thread.sleep(duration);
             kundeArrayList.add(kunde);
-            threadCount++;
-            System.out.println("Thread: " + threadCount);
+            int threadCount1 = threadCount++;
+            System.out.println("Thread: " + threadCount1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
